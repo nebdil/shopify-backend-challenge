@@ -44,20 +44,6 @@ const root = {
   deleteLineItem: LineItem.deleteLineItem
 };
 app.set("view engine", "ejs");
-// index page
-app.get("/", function(req, res) {
-  res.render("index");
-});
-app.use(
-  "/graphql",
-  graphqlHTTP({
-    schema: schema,
-    rootValue: root,
-    graphiql: true
-  })
-);
-app.listen(3000, () => console.log("Now browse to localhost:3000/graphql"));
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -73,6 +59,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", index);
+// index page
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema: schema,
+    rootValue: root,
+    graphiql: true
+  })
+);
+app.listen(3000, () => console.log("Now browse to localhost:3000/graphql"));
 
 // app.use('/graphql/order', graphqlHTTP({
 //   schema: orderSchema,
