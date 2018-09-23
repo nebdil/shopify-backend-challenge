@@ -22,5 +22,13 @@
     "nodemon": "^1.18.4",
     "prettier": "^1.14.3",
     "sqlite3": "^4.0.2"
+  },
+  "devDependencies": {
+    "husky": {
+      "hooks": {
+        "pre-commit": "pretty-quick --staged"
+      }
+    },
+    "pretty-quick": "^1.7.0"
   }
 }
