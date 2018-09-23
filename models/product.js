@@ -1,9 +1,9 @@
-import db from 'db/index.js';
-import Shop from './shop';
-import LineItem from './line_item';
+const db = require('../db/index.js');
+const Shop = require('../models/shop');
+const LineItem = require('../models/line_item');
 
-const Shop = db.Model.extend({
-    tableName: 'shops',
+const Product = db.Model.extend({
+    tableName: 'products',
     shop: function () {
         return this.belongsTo(Shop);
     },
@@ -12,4 +12,4 @@ const Shop = db.Model.extend({
     }
 });
 
-export default Shop;
+module.exports = Product;

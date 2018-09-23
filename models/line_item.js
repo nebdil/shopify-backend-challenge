@@ -1,6 +1,6 @@
-import db from 'db/index.js';
-import Product from './product';
-import Order from './order';
+const db = require('../db/index.js');
+const Product = require('./product');
+const Order = require('./order');
 
 const LineItem = db.Model.extend({
     tableName: 'line-items',
@@ -12,4 +12,4 @@ const LineItem = db.Model.extend({
     }
 });
 
-export default LineItem;
+module.exports = LineItem;

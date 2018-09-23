@@ -1,6 +1,6 @@
-import db from 'db/index.js';
-import Product from './product';
-import Order from './order';
+const db = require('../db/index.js');
+const Product = require('../models/product');
+const Order = require('../models/order');
 
 const Shop = db.Model.extend({
     tableName: 'shops',
@@ -10,6 +10,8 @@ const Shop = db.Model.extend({
     orders: function () {
         return this.hasMany(Order);
     }
+}, {
+    dependents: ['products', 'orders']
 });
 
-export default Shop;
+module.exports = Shop;
