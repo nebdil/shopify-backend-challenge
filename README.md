@@ -69,7 +69,7 @@ with Query Variables:
 
 - The models are formed by Bookshelf.js and are under the sub-directory `models/`.
 
-- There is dummy data in the SQlite3 database that will be helpful while querying. The database have been populated by Knex seeds; hence the most up-to-date data is visible under `db/seeds/add_demo_data.js`.
+- There is dummy data in the SQlite3 database that will be helpful while querying. The database have been populated by Knex seeds; hence the most up-to-date data is visible under `db/seeds/add_demo_shops.js`, `db/seeds/add_demo_products.js`, `db/seeds/add_demo_orders.js` and `db/seeds/add_demo_line_items.js`.
 
 ## Prerequisites
 
@@ -82,6 +82,6 @@ If this project is going to be run locally by cloning the repo, steps to follow 
 - Clone repo: `git clone https://github.com/nebdil/shopify-backend-challenge.git <repo>`
 - Go into the cloned directory: `cd <repo>`
 - Install dependencies: `npm install` or `yarn install`
-- If using nodemon, start the server with `nodemon server.js` and if not with `node server.js`
+- Start the server with: `node server.js`
 
 If the project is going to be tested online, go to `http://35.196.190.192/graphql` and try out some of the example queries, or any other CRUD operation that is setup under the folder `graphql/`.
