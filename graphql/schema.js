@@ -1,6 +1,4 @@
-const {
-    buildSchema
-} = require('graphql');
+const { buildSchema } = require("graphql");
 
 module.exports = buildSchema(`
   type Shop {
@@ -56,7 +54,7 @@ module.exports = buildSchema(`
     updateProductName(id: Int!, name: String!): Product
     updateProductPrice(id: Int!, price: Int!): Product
     deleteProduct(id: Int!): Boolean
-    createLineItem(quantity: Int!, price: Int!, product_id: Int!, order_id: Int!): LineItem
+    createLineItem(quantity: Int!, product_id: Int!, order_id: Int!): LineItem
     updateLineItemQuantity(id: Int!, quantity: Int!): LineItem
     updateLineItemPrice(id: Int!, price: Int!): LineItem
     deleteLineItem(id: Int!): Boolean
