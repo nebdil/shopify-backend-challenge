@@ -4,10 +4,7 @@
 
 - This project is a server-side web API making use of GraphQL, Node.js, Express, Knex.js, Bookshelf.js, SQlite3 for data persistence, and deployed to publicly accessible GKE with the following relationships:
 
-Shops have many Products
-Shops have many Orders
-Products have many Line Items
-Orders have many Line Items
+Shops have many Products, Shops have many Orders, Products have many Line Items, Orders have many Line Items
 
 - The project has only an API with full CRUD capabilities, and there is no front end associated with it apart from GraphiQL. The queries can be made from the GraphiQL interface on `http://35.196.190.192/graphql` and the accepted queries are in this repository under `graphql/line_item.js`, `graphql/order.js`, `graphql/product.js`, `graphql/shop.js`. Several examples from those queries are as follows:
 
