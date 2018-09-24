@@ -6,41 +6,31 @@ module.exports = {
   getLineItemById: async ({ id }) => {
     const lineItem = await LineItem.where("id", id)
       .fetch()
-      .then(lineItem => {
-        return lineItem.toJSON();
-      });
+      .then(lineItem => lineItem.toJSON());
     return lineItem;
   },
   getLineItemByName: async ({ name }) => {
     const lineItem = await LineItem.where("name", name)
       .fetch()
-      .then(lineItem => {
-        return lineItem.toJSON();
-      });
+      .then(lineItem => lineItem.toJSON());
     return lineItem;
   },
   getLineItemsById: async ({ id }) => {
     const lineItem = await LineItem.where("id", id)
       .fetchAll()
-      .then(lineItem => {
-        return lineItem.toJSON();
-      });
+      .then(lineItem => lineItem.toJSON());
     return lineItem;
   },
   getLineItemsByName: async ({ name }) => {
     const lineItem = await LineItem.where("name", name)
       .fetchAll()
-      .then(lineItem => {
-        return lineItem.toJSON();
-      });
+      .then(lineItem => lineItem.toJSON());
     return lineItem;
   },
   createLineItem: async ({ quantity, product_id, order_id }) => {
     const product = await Product.where("id", product_id)
       .fetch()
-      .then(product => {
-        return product.toJSON();
-      });
+      .then(product => product.toJSON());
     let price = product.price * quantity;
     let newLineItem = new LineItem({
       quantity: quantity,
@@ -62,9 +52,7 @@ module.exports = {
           patch: true
         }
       )
-      .then(lineItem => {
-        return lineItem.toJSON();
-      });
+      .then(lineItem => lineItem.toJSON());
     return lineItem;
   },
   updateLineItemPrice: async ({ id, price }) => {
@@ -77,9 +65,7 @@ module.exports = {
           patch: true
         }
       )
-      .then(lineItem => {
-        return lineItem.toJSON();
-      });
+      .then(lineItem => lineItem.toJSON());
     return lineItem;
   },
   deleteLineItem: async ({ id }) => {

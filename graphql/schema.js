@@ -12,6 +12,7 @@ module.exports = buildSchema(`
     name: String!
     price: Int!
     shop_id: Int!
+    line_items: [LineItem]!
   }
   type Order {
     id: Int!
